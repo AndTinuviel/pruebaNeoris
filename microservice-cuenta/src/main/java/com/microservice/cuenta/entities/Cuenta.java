@@ -1,5 +1,6 @@
 package com.microservice.cuenta.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,7 +37,8 @@ public class Cuenta {
     @Column(name = "ESTADO")
     private EstadoEnum estado;
 
-    @OneToMany(mappedBy = "cuenta")
+    @OneToMany(mappedBy = "cuenta", fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Movimiento> listaMovimientos;
 
     private Long cliente;

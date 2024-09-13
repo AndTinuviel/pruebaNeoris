@@ -1,5 +1,6 @@
 package com.microservice.cuenta.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,6 +36,7 @@ public class Movimiento {
 
     @ManyToOne
     @JoinColumn(name = "CODIGO_CUENTA")
+    @JsonBackReference
     private Cuenta cuenta;
 
 

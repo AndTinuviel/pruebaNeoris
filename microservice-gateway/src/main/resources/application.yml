@@ -13,7 +13,7 @@ spring:
           enable: true
       routes:
         - id: clientes
-          uri: lb://msvc-cliente
+          uri: http://localhost:8090
           predicates:
             - Path=/api/clientes/**
         - id: cuentas
