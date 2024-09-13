@@ -1,4 +1,4 @@
-package com.microservice.cuenta.controller.dto;
+package com.microservice.cuenta.controller;
 
 public enum EstadoEnum {
 
