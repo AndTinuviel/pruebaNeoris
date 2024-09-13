@@ -1,19 +1,19 @@
 server:
   port: 9090
 spring:
-  aplication:
+  application:
     name: msvc-cuenta
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgres:5432/microservicios
-    username: root
+    url: jdbc:postgresql://localhost:5432/microservicios
+    username: postgres
     password: root
 
   jpa:
     hibernate:
-      ddl-auto:create
+      ddl-auto: create
     database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
   config:
     import: optional:configserver:http://localhost:8888
 
@@ -23,4 +23,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
 

@@ -30,4 +30,9 @@ public class CuentaController {
         return ResponseEntity.ok(cuentaService.findAll());
     }
 
+    @GetMapping("/search-by-cliente/{codigoCliente}")
+    public ResponseEntity<?> findCuentaByCliente(@PathVariable  Long codigoCliente){
+        return ResponseEntity.ok(cuentaService.findByCliente(codigoCliente));
+    }
+
 }

@@ -12,6 +12,6 @@ public interface IMovimientoService {
 
     List<Movimiento> findAll();
 
-    void delete(Long id);
+    void delete(Movimiento movimiento);
 
 }

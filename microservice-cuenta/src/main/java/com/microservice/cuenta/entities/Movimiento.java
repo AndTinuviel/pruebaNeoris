@@ -33,5 +33,9 @@ public class Movimiento {
     @Column(name = "SALDO")
     private Float saldo;
 
+    @ManyToOne
+    @JoinColumn(name = "CODIGO_CUENTA")
+    private Cuenta cuenta;
+
 
 }

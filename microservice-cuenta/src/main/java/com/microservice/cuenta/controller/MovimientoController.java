@@ -32,8 +32,8 @@ public class MovimientoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteItem(@PathVariable Long id){
-        movimientoService.delete(id);
+    public ResponseEntity<Void> deleteItem(@PathVariable Movimiento movimiento){
+        movimientoService.delete(movimiento);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

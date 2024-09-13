@@ -3,7 +3,9 @@ package com.microservice.cliente.service;
 import com.microservice.cliente.entities.Cliente;
 import com.microservice.cliente.persistence.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ClienteServiceImpl implements IClienteService{
 
     @Autowired
