@@ -1,6 +1,7 @@
 package com.microservice.cliente.service;
 
 import com.microservice.cliente.entities.Cliente;
+import com.microservice.cliente.http.response.CuentaByClienteResponse;
 
 public interface IClienteService {
 
@@ -8,4 +9,5 @@ public interface IClienteService {
 
     void save(Cliente cliente);
 
+    CuentaByClienteResponse findCuentaByIdCliente(Long codigoCliente);
 }

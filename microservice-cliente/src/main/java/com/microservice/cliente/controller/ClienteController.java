@@ -25,4 +25,9 @@ public class ClienteController {
         return ResponseEntity.ok(clienteService.findClientById(id));
     }
 
+    @GetMapping("/search-cuentas/{idCliente}")
+    public ResponseEntity<?> findCuentasByIdCliente(@PathVariable Long idCliente){
+        return ResponseEntity.ok(clienteService.findCuentaByIdCliente(idCliente));
+    }
+
 }

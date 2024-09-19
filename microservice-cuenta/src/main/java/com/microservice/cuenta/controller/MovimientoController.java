@@ -37,6 +37,4 @@ public class MovimientoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-
-
 }
