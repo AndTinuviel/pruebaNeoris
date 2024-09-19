@@ -1,5 +1,6 @@
-package com.microservice.cuenta.controller;
+package com.microservice.cuenta.controller.DTOs;
 
+import com.microservice.cuenta.controller.EstadoEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

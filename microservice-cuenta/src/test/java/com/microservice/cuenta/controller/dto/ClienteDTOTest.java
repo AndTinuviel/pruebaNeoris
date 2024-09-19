@@ -1,6 +1,6 @@
 package com.microservice.cuenta.controller.dto;
 
-import com.microservice.cuenta.controller.ClienteDTO;
+import com.microservice.cuenta.controller.DTOs.ClienteDTO;
 import com.microservice.cuenta.controller.EstadoEnum;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

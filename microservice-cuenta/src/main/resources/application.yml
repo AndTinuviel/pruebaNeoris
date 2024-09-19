@@ -10,6 +10,11 @@ spring:
     password: root
 
   jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        type: trace
     hibernate:
       ddl-auto: create
     database: postgresql

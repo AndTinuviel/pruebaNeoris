@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -36,10 +37,13 @@ public class CuentaServiceImpl implements ICuentaService{
     }
 
 
-    public List<Cuenta> findCuentasConMovimientos(Long clienteId, LocalDate fechaDesde, LocalDate fechaHasta) {
+    public List<Cuenta> findMovimientosPorFechas(Long clienteId, LocalDateTime fechaDesde, LocalDateTime fechaHasta) {
         List<Cuenta> cuentas = cuentaRepository.findByCliente(clienteId);
         for (Cuenta cuenta : cuentas) {
-            List<Movimiento> movimientos = cuentaRepository.findMovimientosByCuentaAndFechas(cuenta.getId(), fechaDesde, fechaHasta);
+            System.out.println("AAAAAAAAAAAAAA cuenta.getId() " + cuenta.getId());
+            System.out.println("AAAAAAAAAAAAAA fechaDesde " + fechaDesde);
+            System.out.println("AAAAAAAAAAAAAA fechaHasta " + fechaHasta);
+            List<Movimiento> movimientos = cuentaRepository.findMovimientosPorFechas(cuenta.getId(), fechaDesde, fechaHasta);
             cuenta.setListaMovimientos(movimientos); // Asegúrate de tener un setter en Cuenta o usa un DTO
         }
         return cuentas;

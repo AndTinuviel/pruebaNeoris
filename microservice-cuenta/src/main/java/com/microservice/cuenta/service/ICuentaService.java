@@ -3,6 +3,7 @@ package com.microservice.cuenta.service;
 import com.microservice.cuenta.entities.Cuenta;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface ICuentaService {
@@ -15,6 +16,6 @@ public interface ICuentaService {
 
     List<Cuenta> findByCliente(Long codigoCliente);
 
-    List<Cuenta> findCuentasConMovimientos(Long clienteId, LocalDate fechaDesde, LocalDate fechaHasta) ;
+    List<Cuenta> findMovimientosPorFechas(Long clienteId, LocalDateTime fechaDesde, LocalDateTime fechaHasta) ;
 
 }

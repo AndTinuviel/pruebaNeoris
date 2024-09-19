@@ -8,6 +8,8 @@ import com.microservice.cliente.persistence.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -36,6 +38,17 @@ public class ClienteServiceImpl implements IClienteService{
 
         //Obtener las cuentas
         List<CuentaDTO> listaCuentas = cuentaClient.findCuentaByCliente(codigoCliente);
+
+        return CuentaByClienteResponse.builder().nombreCliente(cliente.getNombre()).listaCuentas(listaCuentas).build();
+    }
+
+    @Override
+    public CuentaByClienteResponse findMovimientosPorFechas(Long codigoCliente, LocalDateTime fechaDesde, LocalDateTime fechaHasta) {
+        //Consultar el cliente
+        Cliente cliente =  clienteRepository.findById(codigoCliente).orElse(new Cliente());
+
+        //Obtener las cuentas
+        List<CuentaDTO> listaCuentas = cuentaClient.findMovimientosPorFechas(codigoCliente,fechaDesde, fechaHasta);
 
         return CuentaByClienteResponse.builder().nombreCliente(cliente.getNombre()).listaCuentas(listaCuentas).build();
     }
