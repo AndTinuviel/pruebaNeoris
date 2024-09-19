@@ -40,9 +40,6 @@ public class CuentaServiceImpl implements ICuentaService{
     public List<Cuenta> findMovimientosPorFechas(Long clienteId, LocalDateTime fechaDesde, LocalDateTime fechaHasta) {
         List<Cuenta> cuentas = cuentaRepository.findByCliente(clienteId);
         for (Cuenta cuenta : cuentas) {
-            System.out.println("AAAAAAAAAAAAAA cuenta.getId() " + cuenta.getId());
-            System.out.println("AAAAAAAAAAAAAA fechaDesde " + fechaDesde);
-            System.out.println("AAAAAAAAAAAAAA fechaHasta " + fechaHasta);
             List<Movimiento> movimientos = cuentaRepository.findMovimientosPorFechas(cuenta.getId(), fechaDesde, fechaHasta);
             cuenta.setListaMovimientos(movimientos); // Asegúrate de tener un setter en Cuenta o usa un DTO
         }
